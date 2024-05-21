@@ -1,4 +1,5 @@
 import 'package:dasar_app/views/home_page.dart';
+import 'package:dasar_app/views/items_page.dart';
 import 'package:dasar_app/views/root_page.dart';
 
 import 'package:flutter/material.dart';
@@ -23,6 +24,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/': (context) => const RootPage(),
         '/home': (context) => const HomePage(),
+        '/items': (context) => const Items(),
       },
     );
   }

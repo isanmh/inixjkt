@@ -18,20 +18,12 @@ class _RootPageState extends State<RootPage> {
   List<Widget> pages = [
     ProfilePage(),
     HomePage(),
+    // Text('Page 3'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: Center(
-      //   child: ElevatedButton(
-      //     onPressed: () {
-      //       Navigator.pushNamed(context, '/home');
-      //     },
-      //     child: const Text('Go to Home Page'),
-      //   ),
-      // ),
-
       bottomNavigationBar: NavigationBar(
         destinations: const [
           NavigationDestination(
@@ -52,6 +44,18 @@ class _RootPageState extends State<RootPage> {
         selectedIndex: currentPage,
       ),
       body: pages[currentPage],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/items');
+        },
+        child: const Icon(Icons.qr_code_scanner),
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(40),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
